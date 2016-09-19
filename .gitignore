@@ -1,0 +1,7 @@
+/target/
+/.settings/
+/.classpath
+/.project
+/serenity.properties
+/SerenityStudy.zip
+/phantomjsdriver.log

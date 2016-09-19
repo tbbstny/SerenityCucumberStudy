@@ -1,0 +1,139 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ttt.serenity</groupId>
+    <artifactId>SerenityStudy</artifactId>
+    <version>trunk-SNAPSHOT</version>
+    <name>SerenityStudy</name>
+    <packaging>jar</packaging>
+    <description>
+        A study in Cucumber and Serenity based Integration Tests.
+        This, the main pom, represents a CI build job where things such as code analyzers
+        and perhaps running tests in dry run mode can be done to validate the code on check-in.
+        Usage: mvn clean install
+    </description>
+
+    <properties>
+        <encoding>UTF-8</encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <snapshot.version>trunk-SNAPSHOT</snapshot.version>
+
+        <jdk.version>1.7</jdk.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <serenity.cucumber.version>1.1.10</serenity.cucumber.version>
+        <parallel.tests>4</parallel.tests>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                    <compilerArgs>
+                        <arg>-Werror</arg>
+                        <arg>-Xlint:all</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <executions>
+                    <execution>
+                        <id>default-test</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+
+                    <!--
+                       After creating and installing *this* artifacts jars, unpack the drivers and features from
+                       the test-jar into target folder to ensure Eclipse JUnit has access to necessary files
+                       in order to run our Cucumber tests successfully.
+                    -->
+                    <execution>
+                        <id>unpack-test-jar</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.ttt.serenity</groupId>
+                                    <artifactId>SerenityStudy</artifactId>
+                                    <version>${snapshot.version}</version>
+                                    <type>test-jar</type>
+                                    <classifier>tests</classifier>
+                                    <includes>**/serenity.properties</includes>
+                                    <outputDirectory>${project.basedir}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.ttt.serenity</groupId>
+                                    <artifactId>SerenityStudy</artifactId>
+                                    <version>${snapshot.version}</version>
+                                    <type>test-jar</type>
+                                    <classifier>tests</classifier>
+                                    <includes>**/*.feature,**/*arrative.txt</includes>
+                                    <outputDirectory>${project.basedir}/target/features</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.ttt.serenity</groupId>
+                                    <artifactId>SerenityStudy</artifactId>
+                                    <version>${snapshot.version}</version>
+                                    <type>test-jar</type>
+                                    <classifier>tests</classifier>
+                                    <includes>**/drivers/*</includes>
+                                    <outputDirectory>${project.basedir}/target</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>${serenity.cucumber.version}</version>
+        </dependency>
+    </dependencies>
+</project>
