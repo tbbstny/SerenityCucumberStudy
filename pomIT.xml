@@ -22,10 +22,11 @@
         <!--
             .*()FeatureTest.class         <== Match all *FeatureTest.class runners
             .*(Cat|Dog)FeatureTest.class  <== Match Cat AND Dog test runners
-            themes default to empty (i.e. ALL), but can be overridden via Jenkins job
+            testrunner.prefixes default to empty (i.e. ALL), but can be overridden via command line / CI
          -->
-        <themes></themes>
-        <failsafe.testrunner>%regex[.*(${themes})FeatureTest.class]</failsafe.testrunner>
+        <testrunner.prefixes></testrunner.prefixes>
+        <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
+        <serenity.version>1.1.40</serenity.version>
         <serenity.maven.version>1.1.40</serenity.maven.version>
         <serenity.cucumber.version>1.1.10</serenity.cucumber.version>
         <parallel.tests>4</parallel.tests>
@@ -91,6 +92,26 @@
                 </executions>
             </plugin>
 
+            <!--  Copy serenityIT.properties to <root>/serenity.properties as required by Serenity -->
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-file</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFile>src/test/resources/serenityIT.properties</sourceFile>
+                            <destinationFile>serenity.properties</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -105,15 +126,6 @@
                         </goals>
                         <configuration>
                             <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.ttt.serenity</groupId>
-                                    <artifactId>SerenityStudy</artifactId>
-                                    <version>${snapshot.version}</version>
-                                    <type>test-jar</type>
-                                    <classifier>tests</classifier>
-                                    <includes>**/serenity.properties</includes>
-                                    <outputDirectory>${project.basedir}</outputDirectory>
-                                </artifactItem>
                                 <artifactItem>
                                     <groupId>com.ttt.serenity</groupId>
                                     <artifactId>SerenityStudy</artifactId>
@@ -153,7 +165,7 @@
                         <configuration>
                             <tasks>
                                 <echo>Test runner properties</echo>
-                                <echo>themes...: ${themes}</echo>
+                                <echo>prefixes.: ${testrunner.prefixes}</echo>
                                 <echo>runners..: ${failsafe.testrunner}</echo>
                             </tasks>
                         </configuration>
@@ -232,6 +244,18 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay-webdriver</artifactId>
+            <version>${serenity.version}</version>
         </dependency>
 
         <dependency>
