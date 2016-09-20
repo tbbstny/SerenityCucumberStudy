@@ -1,0 +1,8 @@
+Usage of Serenity's collection of 'DO NOT EXECUTE TEST' tags
+
+Narrative:
+@ignore
+@pending
+@skip
+@wip
+@manual
