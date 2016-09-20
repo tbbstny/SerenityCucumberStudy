@@ -3,7 +3,7 @@ A study in Maven, Cucumber and Serenity
 
 This demo project demonstrates:
 * [Serenity @driver tag to force use of specifc browser](#driver)
-* [Pending/Skipping Scenarios in Serenity Cucumber](#dontrun) [Outstanding](https://groups.google.com/forum/#!topic/thucydides-users/7FOewIrMWU8 "Pending/Skipping Scenarios in Serenity Cucumber")
+* [Pending/Skipping Scenarios in Serenity Cucumber](#dontrun) (*[Outstanding]*)(https://groups.google.com/forum/#!topic/thucydides-users/7FOewIrMWU8 "Pending/Skipping Scenarios in Serenity Cucumber")
 * [Running Cucumber Tests in Parallel](#parallel)
 * [Running Cucumber Tests from test-jar](#testjar)
 
@@ -23,16 +23,16 @@ Serenity recognizes the following tags, and should report on Cucumber Features/S
 
 ## <a name="parallel"></a> Running Cucumber Tests in Parallel
 This project uses the `maven-failsafe-plugin` to run tests in parallel, as opposed to the sereinity.properties configuration.  The highlights:
-* Need multiple test runners in order to run tests in parallel, use a standard naming convention (this project uses `*FeatureTest.java`)
-* The pom files uses a regular expression to tell failsafe what runners to include:
-```xml
+* Need multiple test runners in order to run tests in parallel, use a standard naming convention
+(this project uses `*FeatureTest.java`)
+* The pom files uses a regular expression to tell failsafe what runners to include:  ```xml
 <testrunner.prefixes></testrunner.prefixes>
 <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
 ```
-..* testrunner.prefixes default to empty (All), but can be a piped list of test runner prefixes.
-..* %regex[.*()FeatureTest.class] - Runs all test runners
-..* %regex[.*(Driver)FeatureTest.class] - Runs only the *DriverFeatureTest runners (tests @driver tag to force specific browsers)
-..* %regex[.*(Driver|DoNotRunTags)FeatureTest.class] - Runs both Driver and DoNotRunTags test runners
+  * testrunner.prefixes default to empty (All), but can be a piped list of test runner prefixes.
+  * %regex[.*()FeatureTest.class] - Runs all test runners
+  * %regex[.*(Driver)FeatureTest.class] - Runs only the *DriverFeatureTest runners (tests @driver tag to force specific browsers)
+  * %regex[.*(Driver|DoNotRunTags)FeatureTest.class] - Runs both Driver and DoNotRunTags test runners
 
 
 ## <a name="testjar"></a> Running Cucumber Tests from test-jar
