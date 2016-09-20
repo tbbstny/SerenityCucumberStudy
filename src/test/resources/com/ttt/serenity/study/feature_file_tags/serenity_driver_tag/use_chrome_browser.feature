@@ -1,5 +1,5 @@
 @example @browser @driver:chrome
-Feature: Use Chrome browser
+Feature: Force use of Chrome browser
 
   An example of using the Serenity @driver:chrome tag to force the use of the Chrome browser.
 

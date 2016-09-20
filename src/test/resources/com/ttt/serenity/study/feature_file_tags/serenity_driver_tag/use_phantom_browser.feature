@@ -1,5 +1,5 @@
 @example @browser @driver:phantomjs
-Feature: Use Phantom browser
+Feature: Force use of Phantom browser
 
   An example of using the Serenity @driver:phantomjs tag to force the use of the PhantomJS browser.
 

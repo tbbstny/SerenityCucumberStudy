@@ -1,0 +1,5 @@
+Usage of Serenity's @driver tag
+
+Narrative:
+Demonstrate use of Serenity's @driver tag to force use of specific browser.
+@driver:chrome, @driver:firefox, @driver:iexplorer, @driver:phantomjs

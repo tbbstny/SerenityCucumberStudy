@@ -7,10 +7,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-     features   = { "classpath:com/ttt/serenity/study/" }
-    //,tags       = { "@browser" }
+     features   = { "classpath:com/ttt/serenity/study/feature_file_tags/serenity_driver_tag/use_chrome_browser.feature" }
 )
 
-public class SerenityStudyFeatureTest
+public class ChromeDriverFeatureTest
 {
 }
