@@ -25,7 +25,8 @@ Serenity recognizes the following tags, and should report on Cucumber Features/S
 This project uses the `maven-failsafe-plugin` to run tests in parallel, as opposed to the sereinity.properties configuration.  The highlights:
 * Need multiple test runners in order to run tests in parallel, use a standard naming convention
 (this project uses `*FeatureTest.java`)
-* The pom files uses a regular expression to tell failsafe what runners to include:  ```xml
+* The pom files uses a regular expression to tell failsafe what runners to include:
+```xml
 <testrunner.prefixes></testrunner.prefixes>
 <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
 ```
