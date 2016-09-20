@@ -3,7 +3,7 @@ A study in Maven, Cucumber and Serenity
 
 This demo project demonstrates:
 * [Serenity @driver tag to force use of specifc browser](#driver)
-* [Pending/Skipping Scenarios in Serenity Cucumber](#dontrun) (*[Outstanding]*)(https://groups.google.com/forum/#!topic/thucydides-users/7FOewIrMWU8 "Pending/Skipping Scenarios in Serenity Cucumber")
+* [Pending/Skipping Scenarios in Serenity Cucumber](#dontrun) (*[Outstanding](https://groups.google.com/forum/#!topic/thucydides-users/7FOewIrMWU8 "Pending/Skipping Scenarios in Serenity Cucumber")*)
 * [Running Cucumber Tests in Parallel](#parallel)
 * [Running Cucumber Tests from test-jar](#testjar)
 
@@ -12,12 +12,12 @@ To run (the easy, straing forward way):
 
 
 ## <a name="driver"></a> Serenity @driver tag to force use of specifc browser
-Serenity recognizes the @driver tag used to force Cucumber Features/Scenarios to use a specific browser:
+Serenity recognizes the @driver tag used to force Cucumber Features/Scenarios to use a specific browser: <br />
 @driver:chrome, @driver:firefox, @driver:iexplorer, @driver:phantomjs
 
 
 ## <a name="dontrun"></a> Pending/Skipping Scenarios in Serenity Cucumber
-Serenity recognizes the following tags, and should report on Cucumber Features/Scenarios without actually executing them:
+Serenity recognizes the following tags, and should report on Cucumber Features/Scenarios without actually executing them: <br />
 @ignore, @pending, @skip, @wip, @manual
 
 
@@ -42,7 +42,8 @@ This project includes two pom files:
 * pomIT.xml - test runner pom; scans test-jar and launches the tests
 
 This requires a two step process to first build the test jar, then launch the tests.
-This is useful for setting up a test runner so business and testers can run on demand.
+This is useful for setting up a test runner so business and testers can run on demand. <br />
+
 1. `mvn clean install`
 2. `mvn -f pomIT.xml verify`
 
