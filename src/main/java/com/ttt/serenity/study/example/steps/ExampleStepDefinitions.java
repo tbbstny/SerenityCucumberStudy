@@ -8,6 +8,7 @@ import java.util.List;
 import com.ttt.serenity.study.example.steplibs.CalcSteps;
 import com.ttt.serenity.study.example.steplibs.UserSteps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -64,9 +65,40 @@ public class ExampleStepDefinitions
         user.closesBrowser();
     }
 
-    @Then("^tests marked \"([^\"]*)\" should not execute$")
-    public void fail(final String tag) {
-        fail("This should not have executed because the test was tagged as " + tag);
-    }
-
+//    @Given("^this \"([^\"]*)\" and \"([^\"]*)\" IS marked SKIPPED or PENDING$")
+//    public void IS_marked_SKIPED_or_PENDING(String featureName, String scenarioName) {
+//        noRun(scenarioName);
+//    }
+//
+//    @Then("^the \"([^\"]*)\" steps SHOULD NOT BE executed$")
+//    public void the_steps_SHOULD_NOT_BE_executed(String scenarioName) {
+//        noRun(scenarioName);
+//    }
+//
+//    private void noRun(String scenarioName) {
+//        user.noRunStep(scenarioName);
+//        assertTrue("Cucumber Step Definition: This step definition SHOULD NOT run because " + scenarioName + " IS marked SKIPPED or PENDING.", true);
+//        doFail(scenarioName);
+//    }
+//
+//    private void doFail(String scenarioName) {
+//        user.alwaysFailStep(scenarioName);
+//        fail("Cucumber Step Definition: A step definition that always fails to provide clear indication if test execution is working as expected.");
+//    }
+//
+//    @Given("^this \"([^\"]*)\" and \"([^\"]*)\" IS NOT marked SKIPPED or PENDING$")
+//    public void IS_NOT_marked_SKIPED_or_PENDING(String featureName, String scenarioName) throws Throwable {
+//        doRun(scenarioName);
+//    }
+//
+//    @Then("^the \"([^\"]*)\" steps SHOULD BE executed$")
+//    public void the_steps_SHOULD_BE_executed(String scenarioName) {
+//        doRun(scenarioName);
+//    }
+//
+//    private void doRun(String scenarioName) {
+//        user.doRunStep(scenarioName);
+//        assertTrue("Cucumber Step Definition: This step definition SHOULD run because " + scenarioName + " IS NOT marked SKIPPED or PENDING.", true);
+//        doFail(scenarioName);
+//    }
 }

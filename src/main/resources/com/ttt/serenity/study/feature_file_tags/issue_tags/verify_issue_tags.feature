@@ -1,4 +1,3 @@
-@id:verify-issue-tags
 @example @verify_issue_tags
 Feature: Verify serenity @issue and @issues tag usage
 Verify serenity @issue and @issues tags work with Cucumber-JVM

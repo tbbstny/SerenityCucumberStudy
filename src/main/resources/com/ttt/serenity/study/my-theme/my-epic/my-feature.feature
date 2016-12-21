@@ -2,7 +2,7 @@
 @component:calculator
 @release:1.0
 @issue:JIRA_123
-@test @naming
+@test @verify_naming_convention
 
 Feature: my-feature
   my-feature is part of a set of themes/epics/features with non-unique names, so only one of the set is reported by Serenity BDD (this is expected behavior).

@@ -2,7 +2,7 @@
 @component:calculator
 @release:sprint_12
 @release:Q2_2016
-@test @naming
+@test @verify_naming_convention
 
 Feature: my feature
     "My Feature" is part of a set of themes/epics/features with non-unique names, so only one of the set is reported by Serenity BDD (this is expected behavior).

@@ -2,7 +2,7 @@
 @component:calculator
 @release:1.0
 @issue:JIRA_123
-@test @naming
+@test @verify_naming_convention
 
 Feature: Mismatched Feature file name with Feature keyword description
   This feature has theme/epic parent with names theme_with_unmatched_feature_name/epic_with_unmatched_feature_name,

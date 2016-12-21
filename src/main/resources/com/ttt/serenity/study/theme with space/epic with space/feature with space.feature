@@ -2,7 +2,7 @@
 @component:calculator
 @release:1.0
 @issue:JIRA_123
-@test @naming
+@test @verify_naming_convention
 
 Feature: feature with space
     "Feature With Space" is part of the set of following themes/epics/features that have been included in the test suite, showing the space, underscore, dash and camelCase naming convention are all valid as long as the names are unique.

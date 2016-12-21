@@ -1,4 +1,4 @@
-@example @verify_tags
+@example @verify_norun_tags
 Feature: Verify serenity tag usage
   Verify Serenity tags @ignore, @pending, @skip, @wip and @manual work with Cucumber-JVM,
   and cause tests to correctly be counted and not executed.

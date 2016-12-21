@@ -1,4 +1,4 @@
-@example @browser
+@example @verify_driver_tag
 Feature: Use configured browser
 
   An example that DOES NOT use the Serenity @driver tag to force use of a specific browser.

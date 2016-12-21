@@ -8,7 +8,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
      features   = { "classpath:com/ttt/serenity/study" },
-     tags       = { "~@browser" }
+     tags       = { "@verify_naming_convention" }
 
 )
 

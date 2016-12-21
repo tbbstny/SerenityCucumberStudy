@@ -7,7 +7,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-     features   = { "classpath:com/ttt/serenity/study/feature_file_tags/serenity_do_not_run_test_tags" }
+        features   = { "classpath:com/ttt/serenity/study" },
+        tags       = { "@verify_norun_tags" }
 )
 
 public class DoNotRunTagsFeatureTest

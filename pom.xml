@@ -26,8 +26,16 @@
         <serenity.cucumber.version>1.1.14</serenity.cucumber.version>
 
         <webdriver.ie.driver>target/drivers/IEDriverServer.exe</webdriver.ie.driver>
+        <!-- Testing -->
+        <!--
+            .*()FeatureTest.class         <== Match all *FeatureTest.class runners
+            .*(Cat|Dog)FeatureTest.class  <== Match Cat AND Dog test runners
+            testrunner.prefixes default to empty (i.e. ALL), but can be overridden via command line / CI
+         -->
+        <testrunner.prefixes>DoNotRunTags|Naming</testrunner.prefixes>
+        <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
+        <parallel.tests>4</parallel.tests>
     </properties>
-
 
     <build>
         <plugins>
@@ -63,19 +71,6 @@
     <profiles>
         <profile>
             <id>Serenity</id>
-            <properties>
-                <!-- Testing -->
-                <!--
-                    .*()FeatureTest.class         <== Match all *FeatureTest.class runners
-                    .*(Cat|Dog)FeatureTest.class  <== Match Cat AND Dog test runners
-                    testrunner.prefixes default to empty (i.e. ALL), but can be overridden via command line / CI
-                 -->
-                <testrunner.prefixes>Naming</testrunner.prefixes>
-                <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
-                <parallel.tests>4</parallel.tests>
-                <webdriver.ie.driver>target/drivers/IEDriverServer.exe</webdriver.ie.driver>
-            </properties>
-
             <build>
                 <plugins>
                     <!--
@@ -200,17 +195,6 @@
                 <serenity.version>1.1.40</serenity.version>
                 <serenity.maven.version>1.1.40</serenity.maven.version>
                 <serenity.cucumber.version>1.1.10</serenity.cucumber.version>
-
-                <!-- Testing -->
-                <!--
-                    .*()FeatureTest.class         <== Match all *FeatureTest.class runners
-                    .*(Cat|Dog)FeatureTest.class  <== Match Cat AND Dog test runners
-                    testrunner.prefixes default to empty (i.e. ALL), but can be overridden via command line / CI
-                 -->
-                <testrunner.prefixes>Naming</testrunner.prefixes>
-                <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
-                <parallel.tests>4</parallel.tests>
-                <webdriver.ie.driver>target/drivers/IEDriverServer.exe</webdriver.ie.driver>
             </properties>
 
             <build>

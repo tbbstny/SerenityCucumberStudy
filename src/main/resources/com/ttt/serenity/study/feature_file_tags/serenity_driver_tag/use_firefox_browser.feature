@@ -1,4 +1,4 @@
-@example @browser @driver:firefox
+@example @verify_driver_tag @driver:firefox
 Feature: Force use of Firefox browser
 
   An example of using the Serenity @driver:firefox tag to force the use of the FireFox browser.

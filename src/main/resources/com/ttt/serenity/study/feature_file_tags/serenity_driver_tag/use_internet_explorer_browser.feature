@@ -1,4 +1,4 @@
-@example @browser @driver:iexplorer
+@example @verify_driver_tag @driver:iexplorer
 Feature: Force use of Internet Explorer browser
 
   An example of using the Serenity @driver:iexplorer tag to force the use of the Internet Explorer browser.
