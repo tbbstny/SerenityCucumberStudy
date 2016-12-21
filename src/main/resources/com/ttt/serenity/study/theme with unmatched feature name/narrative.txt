@@ -1,0 +1,10 @@
+theme with unmatched feature name
+
+Narrative:
+Mismatched Feature file name with Feature keyword description
+  This feature in this theme has theme/epic parents with names theme_with_unmatched_feature_name/epic_with_unmatched_feature_name,
+  but because the feature file name (feature_with_unmatched_feature_name.feature) does not match the Feature:
+  keyword description in the feature file (Mismatched Feature file name with Feature keyword description), the parent
+  theme and epic do not show up on the Serenity BDD report requirements / home page.
+
+  Additionally, this theme will show in the Themes tab, but the Epic and Feature no longer show up under those tabs.
