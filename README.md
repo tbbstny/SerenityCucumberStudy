@@ -112,10 +112,6 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
 </table>
 
 
-![Generated Themes](https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Features_1140.png "Themes 1.1.40")
-
-
-
 ## <a name="driver"></a> Serenity @driver tag to force use of specifc browser
 Serenity recognizes the @driver tag used to force Cucumber Features/Scenarios to use a specific browser: <br />
 @driver:chrome, @driver:firefox, @driver:iexplorer, @driver:phantomjs
