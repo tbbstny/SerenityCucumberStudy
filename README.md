@@ -1,7 +1,7 @@
 # This page needs updated!
 For now, working through issues with upgrading from 1.1.40 to 1.2.2-rc.2
-Can run these maven commands to generate reports agains either version for comparion:
-`mvn clean install -PSerenity`
+Can run these maven commands to generate reports against either version for comparison:<br/>
+`mvn clean install -PSerenity` <br/>
 `mvn clean install -PSerenity1.1.40`
 
 
