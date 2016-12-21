@@ -25,7 +25,7 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
         <th width="33%">1.2.2-rc.2</th>
     </tr>
     <tr>
-        <td valign="top">Pending & Subsequent Feature<br/> Within an epic, if a feature is marked as @pending, subsequent features are also being treated as pending.</td>
+        <td valign="top">Pending & Subsequent Feature<br/> Within an epic, if a feature is marked as @pending, subsequent features are also being treated as pending.<br/><br/>Test Runner Perfix: <kbd>DoNotRunTags</kbd></td>
         <td valign="top"><ul>
             <li>"Subsequent Feature Test Scenario" executed as expected, BUT steps are marked as pending.</li>
         </ul></td>
