@@ -1,3 +1,13 @@
+# This page needs updated!
+For now, working through issues with upgrading from 1.1.40 to 1.2.2-rc.2
+Can run these maven commands to generate reports agains either version for comparion:
+`mvn clean install -PSerenity`
+`mvn clean install -PSerenity1.1.40`
+
+
+
+
+
 # Serenity + Cucumber-JVM Study
 A study in Maven, Cucumber and Serenity
 
