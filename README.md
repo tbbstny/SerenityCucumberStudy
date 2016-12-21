@@ -9,14 +9,14 @@ This demo project demonstrates:
 
 To run (the easy, straight forward way): <br />
 Maven commands to generate reports against different versions for comparison:<br/>
-`mvn clean install -PSerenity`  (using Serenity v 1.2.2-rc.2) <br/>
-`mvn clean install -PSerenity1.1.40` (using Serenity v 1.1.40) <br/>
+<kbd>mvn clean install -PSerenity<\kbd>  (using Serenity v 1.2.2-rc.2) <br/>
+<kbd>mvn clean install -PSerenity1.1.40<\kbd> (using Serenity v 1.1.40) <br/>
 
 
 ## Observations & Issues
 Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pipe delimited list of prefixes, for example:<br/>
-`mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming`<br/>
-`mvn clean install -PSerenity1.1.40 -Dtestrunner.prefixes=DoNotRunTags|Naming`<br/>
+<kbd>mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming<\kbd><br/>
+<kbd>mvn clean install -PSerenity1.1.40 -Dtestrunner.prefixes=DoNotRunTags|Naming<\kbd><br/>
 
 <table>
     <tr>
@@ -39,18 +39,19 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
     </tr>
     <tr>
         <td valign="top">
+            Discovery of naming convention constraints for Themes.
             <br/><br/>Test Runner Perfix: <kbd>Naming</kbd>
         </td>
         <td valign="top">
             <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Themes_1140.png" width="250">
             <ul>
-                <li></li>
+                <li>Theme names shown as expected</li>
             </ul>
         </td>
         <td valign="top">
             <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Themes_122.png" width="250">
             <ul>
-                <li></li>
+                <li>All theme names are shown, BUT theme name with underscores has been mangled.  Guessing asciidoc has been mistakenly applied to names and not just narratives.  Also, I've not set the <kbd>narative.format</kbd> to <kbd>asciidoc</kbd> so it should be applied anyway.</li>
             </ul>
         </td>
     </tr>
