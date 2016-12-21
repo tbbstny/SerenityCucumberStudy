@@ -9,12 +9,12 @@ This demo project demonstrates:
 
 To run (the easy, straight forward way): <br />
 Maven commands to generate reports against different versions for comparison:<br/>
-`mvn clean install -PSerenity`  (using Serenity v 1.2.2-rc.2)
-`mvn clean install -PSerenity1.1.40` (using Serenity v 1.1.40)
+`mvn clean install -PSerenity`  (using Serenity v 1.2.2-rc.2) <br/>
+`mvn clean install -PSerenity1.1.40` (using Serenity v 1.1.40) <br/>
 
 
 ## Observations & Issues
-Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pipe delimited list of prefixes, for example:
+Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pipe delimited list of prefixes, for example:<br/>
 `mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming`<br/>
 `mvn clean install -PSerenity1.1.40 -Dtestrunner.prefixes=DoNotRunTags|Naming`<br/>
 
