@@ -6,12 +6,12 @@ Can run these maven commands to generate reports against either version for comp
 
 <table>
     <tr>
-        <th>Use Case</th>
-        <th>1.1.40</th>
-        <th>1.2.2-rc.2</th>
+        <th width="34%">Use Case</th>
+        <th width="33%">1.1.40</th>
+        <th width="33%">1.2.2-rc.2</th>
     </tr>
     <tr>
-        <td valign="top">Pending & Subsequent Feature: Within an epic, if a feature is marked as @pending, subsequent features are also being treated as pending.</td>
+        <td valign="top">Pending & Subsequent Feature<br/> Within an epic, if a feature is marked as @pending, subsequent features are also being treated as pending.</td>
         <td valign="top"><ul>
             <li>"Subsequent Feature Test Scenario" executed as expected, BUT steps are marked as pending.</li>
         </ul></td>
