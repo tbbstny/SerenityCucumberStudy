@@ -42,30 +42,13 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
             <br/><br/>Test Runner Perfix: <kbd>Naming</kbd>
         </td>
         <td valign="top">
-            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Themese_1140.png" width="150">
+            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Themes_1140.png" width="250">
             <ul>
                 <li></li>
             </ul>
         </td>
         <td valign="top">
-            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Themes_122.png" width="150">
-            <ul>
-                <li></li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td valign="top">
-            <br/><br/>Test Runner Perfix: <kbd>Naming</kbd>
-        </td>
-        <td valign="top">
-            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Epics_1140.png" width="150">
-            <ul>
-                <li></li>
-            </ul>
-        </td>
-        <td valign="top">
-            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Epics_122.png" width="150">
+            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Themes_122.png" width="250">
             <ul>
                 <li></li>
             </ul>
@@ -76,13 +59,30 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
             <br/><br/>Test Runner Perfix: <kbd>Naming</kbd>
         </td>
         <td valign="top">
-            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Features_1140.png" width="150">
+            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Epics_1140.png" width="250">
             <ul>
                 <li></li>
             </ul>
         </td>
         <td valign="top">
-            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Features_122.png" width="150">
+            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Epics_122.png" width="250">
+            <ul>
+                <li></li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <br/><br/>Test Runner Perfix: <kbd>Naming</kbd>
+        </td>
+        <td valign="top">
+            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Features_1140.png" width="250">
+            <ul>
+                <li></li>
+            </ul>
+        </td>
+        <td valign="top">
+            <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Features_122.png" width="250">
             <ul>
                 <li></li>
             </ul>
