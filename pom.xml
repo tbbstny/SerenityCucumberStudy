@@ -345,7 +345,5 @@
             <artifactId>serenity-cucumber</artifactId>
             <version>${serenity.cucumber.version}</version>
         </dependency>
-
-
     </dependencies>
 </project>

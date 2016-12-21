@@ -9,14 +9,14 @@ This demo project demonstrates:
 
 To run (the easy, straight forward way): <br />
 Maven commands to generate reports against different versions for comparison:<br/>
-<kbd>mvn clean install -PSerenity<\kbd>  (using Serenity v 1.2.2-rc.2) <br/>
-<kbd>mvn clean install -PSerenity1.1.40<\kbd> (using Serenity v 1.1.40) <br/>
+<kbd>mvn clean install -PSerenity</kbd>  (using Serenity v 1.2.2-rc.2) <br/>
+<kbd>mvn clean install -PSerenity1.1.40</kbd> (using Serenity v 1.1.40) <br/>
 
 
 ## Observations & Issues
 Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pipe delimited list of prefixes, for example:<br/>
-<kbd>mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming<\kbd><br/>
-<kbd>mvn clean install -PSerenity1.1.40 -Dtestrunner.prefixes=DoNotRunTags|Naming<\kbd><br/>
+<kbd>mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming</kbd><br/>
+<kbd>mvn clean install -PSerenity1.1.40 -Dtestrunner.prefixes=DoNotRunTags|Naming</kbd><br/>
 
 <table>
     <tr>
@@ -51,41 +51,48 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
         <td valign="top">
             <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Themes_122.png" width="250">
             <ul>
-                <li>All theme names are shown, BUT theme name with underscores has been mangled.  Guessing asciidoc has been mistakenly applied to names and not just narratives.  Also, I've not set the <kbd>narative.format</kbd> to <kbd>asciidoc</kbd> so it should be applied anyway.</li>
+                <li>All theme names are shown, BUT theme name with underscores has been mangled.  Guessing asciidoc has been mistakenly applied to names and not just narratives.  Also, I've not set the <kbd>narative.format</kbd> to <kbd>asciidoc</kbd> so it <em>should not</em> be applied anyway.</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td valign="top">
+            Discovery of naming convention constraints for Epics.
             <br/><br/>Test Runner Perfix: <kbd>Naming</kbd>
         </td>
         <td valign="top">
             <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Epics_1140.png" width="250">
             <ul>
-                <li></li>
+                <li>Epic names shown as expected</li>
             </ul>
         </td>
         <td valign="top">
             <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Epics_122.png" width="250">
             <ul>
-                <li></li>
+                <li>Epic names with dashes are missing</li>
+                <li>Epics having features with a mismatch between file and internal feature name are missing</li>
+                <li>Epic names with underscores are mangled.</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td valign="top">
+            Discovery of naming convention constraints for Features.
             <br/><br/>Test Runner Perfix: <kbd>Naming</kbd>
         </td>
         <td valign="top">
             <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Features_1140.png" width="250">
             <ul>
-                <li></li>
+                <li>Feature names shown as expected</li>
             </ul>
         </td>
         <td valign="top">
             <img src="https://github.com/tbbstny/SerenityCucumberStudy/blob/master/images/Features_122.png" width="250">
             <ul>
-                <li></li>
+                <li>Feature names with dashes are missing</li>
+                <li>Features with a mismatch between file and internal feature name are missing</li>
+                <li>Feature names with underscores are mangled.</li>
+
             </ul>
         </td>
     </tr>
