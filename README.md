@@ -1,8 +1,22 @@
-# This page needs updated!
-For now, working through issues with upgrading from 1.1.40 to 1.2.2-rc.2
-Can run these maven commands to generate reports against either version for comparison:<br/>
-`mvn clean install -PSerenity` <br/>
-`mvn clean install -PSerenity1.1.40`
+# Serenity + Cucumber-JVM Study
+A study in Maven, Cucumber and Serenity
+
+This demo project demonstrates:
+* [Serenity @driver tag to force use of specifc browser](#driver)
+* [Pending/Skipping Scenarios in Serenity Cucumber](#dontrun) (*[Outstanding](https://groups.google.com/forum/#!topic/thucydides-users/7FOewIrMWU8 "Pending/Skipping Scenarios in Serenity Cucumber")*)
+* [Running Cucumber Tests in Parallel](#parallel)
+* [Running Cucumber Tests from a ~~test-jar~~ Test Project](#testjar)
+
+To run (the easy, straight forward way): <br />
+Maven commands to generate reports against different versions for comparison:<br/>
+`mvn clean install -PSerenity`  (using Serenity v 1.2.2-rc.2)
+`mvn clean install -PSerenity1.1.40` (using Serenity v 1.1.40)
+
+
+## Observations & Issues
+Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pipe delimited list of prefixes, for example:
+`mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming`<br/>
+`mvn clean install -PSerenity1.1.40 -Dtestrunner.prefixes=DoNotRunTags|Naming`<br/>
 
 <table>
     <tr>
@@ -19,24 +33,13 @@ Can run these maven commands to generate reports against either version for comp
             <li>"Pending Epic" missing from Epics tab</li>
             <li>"Pending Feature should be Skipped" missing from Features tab</li>
             <li>"Subsequent Feature should Execute" missing from Features tab</li>
-            <li>(Features are available on home page under "Tests"; Possibly missing from tabs due to something with having scenario descriptions)</li>
-            <li>"Subsequent Feature should Execute" was NOT executed</li>
+            <li>"Subsequent Feature should Execute" was NOT executed, but should have been</li>
+            <li>Note: Features are available on home page under "Tests", and possibly missing from tabs due to something with having scenario descriptions</li>
         </ul></td>
     </tr>
 </table>
 
-# Serenity + Cucumber-JVM Study
-A study in Maven, Cucumber and Serenity
 
-This demo project demonstrates:
-* [Serenity @driver tag to force use of specifc browser](#driver)
-* [Pending/Skipping Scenarios in Serenity Cucumber](#dontrun) (*[Outstanding](https://groups.google.com/forum/#!topic/thucydides-users/7FOewIrMWU8 "Pending/Skipping Scenarios in Serenity Cucumber")*)
-* [Running Cucumber Tests in Parallel](#parallel)
-* [Running Cucumber Tests from a ~~test-jar~~ Test Project](#testjar)
-
-To run (the easy, straing forward way): <br />
-`mvn clean install -PSerenity`  (using Serenity v 1.2.2-rc.2)
-`mvn clean install -PSerenity1.1.40` (using Serenity v 1.1.40)
 
 
 ## <a name="driver"></a> Serenity @driver tag to force use of specifc browser

@@ -32,7 +32,7 @@
             .*(Cat|Dog)FeatureTest.class  <== Match Cat AND Dog test runners
             testrunner.prefixes default to empty (i.e. ALL), but can be overridden via command line / CI
          -->
-        <testrunner.prefixes>DoNotRunTags|Naming</testrunner.prefixes>
+        <testrunner.prefixes></testrunner.prefixes>
         <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
         <parallel.tests>4</parallel.tests>
     </properties>

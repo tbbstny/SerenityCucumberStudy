@@ -2,5 +2,5 @@ Pending & Subsequent Features
 
 Narrative:
 When a feature is tagged pending, subsequent features are not being processed correctly.
-zPending Theme / Pending Epic / Pending Feature.feature
-zPending Theme / Pending Epic / Subsequent Feature.feature
+zPending Theme/Pending Epic/Pending Feature.feature
+zPending Theme/Pending Epic/Subsequent Feature.feature
