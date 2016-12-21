@@ -11,11 +11,11 @@ Can run these maven commands to generate reports against either version for comp
         <th>1.2.2-rc.2</th>
     </tr>
     <tr>
-        <td>Pending & Subsequent Feature: Within an epic, if a feature is marked as @pending, subsequent features are also being treated as pending.</td>
-        <td><ul>
+        <td valign="top">Pending & Subsequent Feature: Within an epic, if a feature is marked as @pending, subsequent features are also being treated as pending.</td>
+        <td valign="top"><ul>
             <li>"Subsequent Feature Test Scenario" executed as expected, BUT steps are marked as pending.</li>
         </ul></td>
-        <td><ul>
+        <td valign="top"><ul>
             <li>"Pending Epic" missing from Epics tab</li>
             <li>"Pending Feature should be Skipped" missing from Features tab</li>
             <li>"Subsequent Feature should Execute" missing from Features tab</li>
