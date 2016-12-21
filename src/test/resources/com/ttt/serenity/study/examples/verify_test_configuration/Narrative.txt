@@ -1,4 +1,0 @@
-Verify test configuration
-
-Narrative:
-Features related to validating our configuration is correct and working as expected.

@@ -1,4 +1,0 @@
-Examples
-
-Narrative:
-Example scenarios to prove out use of Serenity

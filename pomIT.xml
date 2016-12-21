@@ -24,11 +24,11 @@
             .*(Cat|Dog)FeatureTest.class  <== Match Cat AND Dog test runners
             testrunner.prefixes default to empty (i.e. ALL), but can be overridden via command line / CI
          -->
-        <testrunner.prefixes></testrunner.prefixes>
+        <testrunner.prefixes>Naming</testrunner.prefixes>
         <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
-        <serenity.version>1.1.40</serenity.version>
-        <serenity.maven.version>1.1.40</serenity.maven.version>
-        <serenity.cucumber.version>1.1.10</serenity.cucumber.version>
+        <serenity.version>1.2.2-rc.2</serenity.version>
+        <serenity.maven.version>1.2.2-rc.2</serenity.maven.version>
+        <serenity.cucumber.version>1.1.14</serenity.cucumber.version>
         <parallel.tests>4</parallel.tests>
         <webdriver.ie.driver>target/drivers/IEDriverServer.exe</webdriver.ie.driver>
     </properties>
@@ -105,7 +105,7 @@
                             <goal>copy</goal>
                         </goals>
                         <configuration>
-                            <sourceFile>src/test/resources/serenityIT.properties</sourceFile>
+                            <sourceFile>src/main/resources/serenityIT.properties</sourceFile>
                             <destinationFile>serenity.properties</destinationFile>
                         </configuration>
                     </execution>
@@ -125,7 +125,17 @@
                             <goal>unpack</goal>
                         </goals>
                         <configuration>
+
                             <artifactItems>
+                                <!--  Unpack the serenityIT.properties file -->
+                                <artifactItem>
+                                    <groupId>com.ttt.serenity</groupId>
+                                    <artifactId>SerenityStudy</artifactId>
+                                    <version>${snapshot.version}</version>
+                                    <includes>**/serenityIT.properties</includes>
+                                    <outputDirectory>${project.basedir}</outputDirectory>
+                                </artifactItem>
+                                <!--  Unpack the cucumber feature files -->
                                 <artifactItem>
                                     <groupId>com.ttt.serenity</groupId>
                                     <artifactId>SerenityStudy</artifactId>
@@ -135,19 +145,38 @@
                                     <includes>**/*.feature,**/*arrative.txt</includes>
                                     <outputDirectory>${project.basedir}/target/features</outputDirectory>
                                 </artifactItem>
+                                <!--  Unpack the selenium webdrivers -->
                                 <artifactItem>
                                     <groupId>com.ttt.serenity</groupId>
                                     <artifactId>SerenityStudy</artifactId>
                                     <version>${snapshot.version}</version>
-                                    <type>test-jar</type>
-                                    <classifier>tests</classifier>
                                     <includes>**/drivers/*</includes>
                                     <outputDirectory>${project.basedir}/target</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
+                </executions>
+            </plugin>
 
+            <!--  In order to run Serenity from Jenkins (or locally mimicking the Jenkins job),     -->
+            <!--  rename the unpacked <root>/serenityIT.properties to <root>/serenity.properties as required by Serenity -->
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>rename-file</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>rename</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFile>${project.basedir}/serenityIT.properties</sourceFile>
+                            <destinationFile>${project.basedir}/serenity.properties</destinationFile>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
 
@@ -164,7 +193,7 @@
                         </goals>
                         <configuration>
                             <tasks>
-                                <echo>Test runner properties</echo>
+                                <echo>Launching Serenity / Cucumber Test Runners via Maven FailSafe plugin</echo>
                                 <echo>prefixes.: ${testrunner.prefixes}</echo>
                                 <echo>runners..: ${failsafe.testrunner}</echo>
                             </tasks>
@@ -178,6 +207,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <reportsDirectory>${project.build.directory}/failsafe-reports/e2e</reportsDirectory>
                     <summaryFile>${project.build.directory}/failsafe-reports/e2e/failsafe-summary.xml</summaryFile>
                     <forkCount>1</forkCount>
@@ -229,15 +259,6 @@
             <groupId>com.ttt.serenity</groupId>
             <artifactId>SerenityStudy</artifactId>
             <version>${snapshot.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ttt.serenity</groupId>
-            <artifactId>SerenityStudy</artifactId>
-            <version>${snapshot.version}</version>
-            <type>test-jar</type>
-            <classifier>tests</classifier>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
