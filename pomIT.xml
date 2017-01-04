@@ -26,9 +26,9 @@
          -->
         <testrunner.prefixes></testrunner.prefixes>
         <failsafe.testrunner>%regex[.*(${testrunner.prefixes})FeatureTest.class]</failsafe.testrunner>
-        <serenity.version>1.2.2-rc.2</serenity.version>
-        <serenity.maven.version>1.2.2-rc.2</serenity.maven.version>
-        <serenity.cucumber.version>1.1.14</serenity.cucumber.version>
+        <serenity.version>1.2.2-rc.6</serenity.version>
+        <serenity.maven.version>1.2.2-rc.6</serenity.maven.version>
+        <serenity.cucumber.version>1.1.20</serenity.cucumber.version>
         <parallel.tests>4</parallel.tests>
         <webdriver.ie.driver>target/drivers/IEDriverServer.exe</webdriver.ie.driver>
     </properties>

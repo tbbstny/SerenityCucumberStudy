@@ -1,5 +1,7 @@
 # Serenity + Cucumber-JVM Study
 A study in Maven, Cucumber and Serenity
+serenity-core v. 1.2.2-rc.6
+serenity-cucumber v. 1.1.20
 
 This demo project demonstrates:
 * [Serenity @driver tag to force use of specifc browser](#driver)
@@ -9,13 +11,14 @@ This demo project demonstrates:
 
 To run (the easy, straight forward way): <br />
 Maven commands to generate reports against different versions for comparison:<br/>
-<kbd>mvn clean install -PSerenity</kbd>  (using Serenity v 1.2.2-rc.2) <br/>
-<kbd>mvn clean install -PSerenity1.1.40</kbd> (using Serenity v 1.1.40) <br/>
+<kbd>mvn clean install -PSerenity</kbd> <br/>
 
 
 ## Observations & Issues
 Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pipe delimited list of prefixes, for example:<br/>
 <kbd>mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming</kbd><br/>
+
+<!-- Issues fixed in 1.2.2-rc.6
 <kbd>mvn clean install -PSerenity1.1.40 -Dtestrunner.prefixes=DoNotRunTags|Naming</kbd><br/>
 
 <table>
@@ -92,7 +95,6 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
                 <li>Feature names with dashes are missing</li>
                 <li>Features with a mismatch between file and internal feature name are missing</li>
                 <li>Feature names with underscores are mangled.</li>
-
             </ul>
         </td>
     </tr>
@@ -108,8 +110,8 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
             <li></li>
         </ul></td>
     </tr>
-
 </table>
+-->
 
 
 ## <a name="driver"></a> Serenity @driver tag to force use of specifc browser
