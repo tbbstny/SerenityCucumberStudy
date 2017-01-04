@@ -1,24 +1,24 @@
 # Serenity + Cucumber-JVM Study
-A study in Maven, Cucumber and Serenity
-serenity-core v. 1.2.2-rc.6
-serenity-cucumber v. 1.1.20
+A study in Maven, Cucumber and Serenity <br/>
+serenity-core v. 1.2.2-rc.6 <br/>
+serenity-cucumber v. 1.1.20 <br/>
 
 This demo project demonstrates:
 * [Serenity @driver tag to force use of specifc browser](#driver)
 * [Pending/Skipping Scenarios in Serenity Cucumber](#dontrun) (*[Outstanding](https://groups.google.com/forum/#!topic/thucydides-users/7FOewIrMWU8 "Pending/Skipping Scenarios in Serenity Cucumber")*)
+* [Discover Naming Conventions](#naming)
 * [Running Cucumber Tests in Parallel](#parallel)
 * [Running Cucumber Tests from a ~~test-jar~~ Test Project](#testjar)
 
 To run (the easy, straight forward way): <br />
 Maven commands to generate reports against different versions for comparison:<br/>
 <kbd>mvn clean install -PSerenity</kbd> <br/>
-
-
-## Observations & Issues
-Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pipe delimited list of prefixes, for example:<br/>
 <kbd>mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming</kbd><br/>
 
 <!-- Issues fixed in 1.2.2-rc.6
+## Observations & Issues
+Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pipe delimited list of prefixes, for example:<br/>
+<kbd>mvn clean install -PSerenity -Dtestrunner.prefixes=DoNotRunTags|Naming</kbd><br/>
 <kbd>mvn clean install -PSerenity1.1.40 -Dtestrunner.prefixes=DoNotRunTags|Naming</kbd><br/>
 
 <table>
@@ -115,15 +115,25 @@ Can limit tests to specific test runners (i.e. *FeatureTest.java) by using a pip
 
 
 ## <a name="driver"></a> Serenity @driver tag to force use of specifc browser
+Test Runner Tag: <kbd>@verify_driver_tag</kbd><br/>
 Serenity recognizes the @driver tag used to force Cucumber Features/Scenarios to use a specific browser: <br />
 @driver:chrome, @driver:firefox, @driver:iexplorer, @driver:phantomjs
 
 
 ## <a name="dontrun"></a> Pending/Skipping Scenarios in Serenity Cucumber
+Test Runner Perfix: <kbd>DoNotRunTags</kbd>
+Test Runner Tag: <kbd>@verify_norun_tags</kbd><br/>
 Serenity recognizes the following tags, and should report on Cucumber Features/Scenarios without actually executing them: <br />
 @ignore, @pending, @skip, @wip, @manual
 v 1.1.40 - Didn't skip @ignore, @ignored; Also didn't skip code in Cucumber Step Definitions, only code in Serenity Step Libraires.
 v 1.2.2-rc.2 - Handles @ignore, @ignored; Skips Cucumber Step Definitions code now too!
+
+
+## <a name="naming"></a> Discover Naming Conventions
+Test Runner Tag: <kbd>@verify_naming_convention</kbd><br/>
+This example organizes requirments into Themes, Epics and Features.  Within each category, Serenity requires unique names.  <br/>
+Note: Serenity treats names delimited with spaces, dashes, underscores or camelcase as the same name.
+ <br />
 
 
 ## <a name="parallel"></a> Running Cucumber Tests in Parallel
